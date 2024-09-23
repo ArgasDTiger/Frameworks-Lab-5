@@ -1,0 +1,36 @@
+<div class="container">
+  <h2>Students</h2>
+  <div class="form-group">
+    <input [(ngModel)]="newStudent.name" class="form-control mt-2" placeholder="Enter student name" required>
+    <input [(ngModel)]="newStudent.birthDate" type="date" class="form-control mt-2" placeholder="Enter birth date" required>
+    <input [(ngModel)]="newStudent.group" type="number" class="form-control mt-2" placeholder="Enter group number" required>
+    <button (click)="onAddStudent()" class="btn btn-primary mt-2">
+      {{ isEditMode ? 'Save Student' : 'Add Student' }}
+    </button>
+  </div>
+  <table class="table">
+    <thead>
+    <tr>
+      <th>Name</th>
+      <th>Birth Date</th>
+      <th>Group</th>
+      <th>Action</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let student of students">
+      <td>{{ student.name }}</td>
+      <td>{{ student.birthDate | date }}</td>
+      <td>{{ student.group }}</td>
+      <td>
+        <button (click)="onEditStudent(student)" class="btn btn-warning me-1">
+          <i class="bi bi-pencil"></i>
+        </button>
+        <button (click)="onDeleteStudent(student._id)" class="btn btn-danger">
+          <i class="bi bi-trash"></i>
+        </button>
+      </td>
+    </tr>
+    </tbody>
+  </table>
+</div>

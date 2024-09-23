@@ -1,0 +1,33 @@
+<div class="container">
+  <h2>Groups</h2>
+  <div class="form-group">
+    <input [(ngModel)]="newGroup.number" type="number" class="form-control mb-2" placeholder="Enter group number" required>
+    <input [(ngModel)]="newGroup.subgroupLetter" class="form-control mb-2" placeholder="Enter subgroup letter" required>
+    <button (click)="onAddGroup()" class="btn btn-primary">
+      {{ isEditMode ? 'Save Group' : 'Add Group' }}
+    </button>
+  </div>
+  <table class="table">
+    <thead>
+    <tr>
+      <th>Number</th>
+      <th>Subgroup Letter</th>
+      <th>Action</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let group of groups">
+      <td>{{ group.number }}</td>
+      <td>{{ group.subgroupLetter }}</td>
+      <td>
+        <button (click)="onEditGroup(group)" class="btn btn-warning me-1">
+          <i class="bi bi-pencil"></i>
+        </button>
+        <button (click)="onDeleteGroup(group._id)" class="btn btn-danger">
+          <i class="bi bi-trash"></i>
+        </button>
+      </td>
+    </tr>
+    </tbody>
+  </table>
+</div>
