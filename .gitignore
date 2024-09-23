@@ -32,7 +32,6 @@ jspm_packages/
 .idea/
 
 # Angular build output
-client/dist/
 client/out-tsc/
 client/node_modules/
 
