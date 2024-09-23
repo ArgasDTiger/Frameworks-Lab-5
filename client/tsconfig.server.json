@@ -1,0 +1,22 @@
+{
+  "extends": "./tsconfig.json",
+  "compilerOptions": {
+    "outDir": "./dist/out-tsc/app",
+    "module": "commonjs",
+    "target": "ES2016",
+    "types": [
+      "node"
+    ]
+  },
+  "files": [
+    "src/main.server.ts"
+  ],
+  "include": [
+    "src/**/*.d.ts"
+  ],
+  "exclude": [
+    "src/**/*.spec.ts",
+    "src/test.ts",
+    "src/polyfills.ts"
+  ]
+}
