@@ -4,7 +4,9 @@ import {StudentsComponent} from "./students/students/students.component";
 import {GroupsComponent} from "./groups/groups.component";
 
 export const routes: Routes = [
-  { path: '', component: HomeComponent },
+  { path: '', redirectTo: '/home', pathMatch: 'full' },
+  { path: 'home', component: HomeComponent },
   { path: 'students', component: StudentsComponent },
   { path: 'groups', component: GroupsComponent },
+  { path: '**', redirectTo: '/home' }
 ];
