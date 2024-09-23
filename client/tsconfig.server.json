@@ -2,8 +2,9 @@
   "extends": "./tsconfig.json",
   "compilerOptions": {
     "outDir": "./dist/out-tsc/app",
-    "module": "commonjs",
-    "target": "ES2016",
+    "module": "ES2022",
+    "target": "ES2022",
+    "useDefineForClassFields": true,
     "types": [
       "node"
     ]
