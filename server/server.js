@@ -12,7 +12,7 @@ const port = 3000;
 mongoose.connect(dbConfig.url, { useNewUrlParser: true, useUnifiedTopology: true });
 
 const corsOptions = {
-    origin: '*',
+    origin: '*', // Allow all origins
     optionsSuccessStatus: 200
 };
 
@@ -30,6 +30,4 @@ app.post('/api/groups', GroupController.createGroup);
 app.put('/api/groups/:id', GroupController.updateGroup);
 app.delete('/api/groups/:id', GroupController.deleteGroup);
 
-app.listen(port, () => {
-    console.log(`Server is running on http://localhost:${port}`);
-});
+app.listen(port);
