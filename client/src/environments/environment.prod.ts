@@ -1,4 +1,4 @@
 export const environment = {
   production: true,
-  apiUrl: 'https://lab-5-frameworks.onrender.com/api'
+  apiUrl: 'https://frameworks-lab-5-server.onrender.com/api'
 };
